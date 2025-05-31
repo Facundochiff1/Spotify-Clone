@@ -1,9 +1,17 @@
 import DisplayHome from "./DisplayHome";
-import SongCard from "./SongCard"
-import SongCardContainer from "./SongCardContainer"
-import ButtonsDisplay from "./ButtonsDisplay";
+import SongCard from "./SongCard";
+import SongCardContainer from "./SongCardContainer";
+import ButtonsDisplay from "./ButtonsDisaplay";
+import AlbumCard from "./AlbumCard";
+import ALbumCardContainer from "./AlbumCardContainer";
 
-type Post = {
+type mainAlbumsSongs = {
+  description: string;
+  src: string;
+  id: number;
+};
+
+type sidebarSongs = {
   id: number;
   title: string;
   description: string;
@@ -15,15 +23,16 @@ type Response = {
   forYou: {
     title: string;
     description: string;
-    posts: Post[];
+    sidebarSongs: sidebarSongs[];
+    mainAlbumsSongs: mainAlbumsSongs[];
   };
 };
 
 const response: Response = {
   forYou: {
     title: 'For you',
-    description:'Recomended for you',
-    posts: [
+    description: 'Recomended for you',
+    sidebarSongs: [
       {
         id: 1,
         title: 'Paseando por Roma',
@@ -79,37 +88,54 @@ const response: Response = {
         description: 'Album',
         artist: 'Muse',
         src: 'https://i.scdn.co/image/ab67616d0000b2734cb163c1d111f77307c842b6',
-      }
-      
+      },
     ],
+    mainAlbumsSongs: [
+      {
+        id: 1,
+        description: 'Soda Stereo, Gustavo Cerati, Las Pelota sdasdasdasdsadasdas',
+        src: 'https://cdn-images.dzcdn.net/images/cover/cf1b043581e3712269787b0cbc833b00/1900x1900-000000-80-0-0.jpg',
+      },
+    ]
   },
 };
- 
 
 function Display() {
-    const { forYou } = response
-    return(    
-        <main className="bg-[#121212] w-[100%] m-2 pt-4 px-6 rounded text-white overflow-auto lg:w-[75%] ml-0">
-            <DisplayHome />
-            <div>
-                <ButtonsDisplay />
-                <div className="overflow-auto">
-                    <SongCardContainer title="Your top playlist">
-                        {forYou.posts.map((post) => {
-                            return(
-                                <SongCard 
-                                    key={post.id}
-                                    title={post.title}
-                                    artist={post.artist}
-                                    description={post.description}
-                                    src={post.src}
-                                />
-                            )})}
-                    </SongCardContainer>
-                </div>
-            </div>
-        </main>
-    )
+  const { forYou } = response;
+  return (
+    <main className="bg-[#121212] w-[100%] m-2 mr-0 ml-0 px-9 rounded-[9px] text-white lg:w-[75%]">
+      <DisplayHome />
+      <ButtonsDisplay />
+      <div className="flex flex-col">
+        <div>
+          <SongCardContainer>
+            {forYou.sidebarSongs.map((sidebarSong) => {
+              return (
+                <SongCard
+                  key={sidebarSong.id}
+                  title={sidebarSong.title}
+                  src={sidebarSong.src}
+                />
+              );
+            })}
+          </SongCardContainer>
+        </div>
+        <div className="mt-14">
+          <ALbumCardContainer title="Creado Para Facu">
+             {forYou.mainAlbumsSongs.map((mainAlbumSong) => {
+              return(
+                <AlbumCard 
+                  key={mainAlbumSong.id}
+                  description={mainAlbumSong.description}
+                  src={mainAlbumSong.src}
+                />
+              )
+             })}
+          </ALbumCardContainer>
+        </div>
+      </div>
+    </main>
+  );
 }
 
-export default Display; 
+export default Display;

@@ -17,6 +17,27 @@
 
 body {
   margin: 0;
+  font-family: "CircularStd", sistem-ui, sans-serif;
   display: flex;
+  height: 100vh;
+  overflow: hidden;
   place-items: center;
+  background-color: #121212;
+}
+
+
+@font-face {
+  font-family: "CircularStd";
+  src: url("/Spotify-Clone/spotify-clone/public/fonts/CircularSpotifyText-Light.otf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CircularStd";
+  src: url("/Spotify-Clone/spotify-clone/public/fonts/CircularSpotifyText-Bold.otf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }

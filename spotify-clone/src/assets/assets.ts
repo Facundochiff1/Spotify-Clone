@@ -22,9 +22,26 @@ import arrow_right from "./right_arrow.png";
 import arrow_left from "./left_arrow.png";
 import spotify_logo from "./spotify_logo.png";
 import clock_icon from "./clock_icon.png";
-
+import panel_icon from "./panel-right-close (1).png";
+import folder_icon from "./folder-open.png"
+import line_icon from "./line.png"
+import elipsis_icon from "./ellipsis.png"
+import people_icon from "./people.png"
+import square_icon from "./square.png"
+import quit_icon from "./x.png"
+import minus_icon from "./minus.png"
+import list_icon from "./list.png"
 
 export const assets = {
+  list_icon,
+  quit_icon,
+  minus_icon,
+  square_icon,
+  people_icon,
+  elipsis_icon,
+  line_icon,
+  folder_icon,
+  panel_icon,
   bell_icon,
   home_icon,
   like_icon,

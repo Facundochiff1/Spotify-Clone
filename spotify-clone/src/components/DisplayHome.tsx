@@ -1,10 +1,10 @@
-import Navbar from "./Navbar";
+
 
 function DisplayHome() {
   return (
-    <div>
-        <Navbar user='F'/>
-    </div>
+      <div className="p-2 py-1.5">
+
+      </div>
   );
 }
 
