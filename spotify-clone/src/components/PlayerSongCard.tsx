@@ -8,10 +8,10 @@ type PlayerSongCardProps = {
 function PlayerSongCard(props: PlayerSongCardProps) {
     const { artist, src, title } = props;
     return(
-        <div className="flex flex-col p-3">
+        <div className="flex flex-col mb-1">
             <div className="flex items-center w-[300px] h-[63px] ml-1 text-white gap-3">
                 <div>
-                    <img className="w-[65px] h-[65px] rounded-sm object-cover cursor-pointer" src={src}/>
+                    <img className="w-[60px] h-[60px] rounded-sm object-cover cursor-pointer" src={src}/>
                 </div>
                 <div className="flex flex-col">
                     <h2 className="cursor-pointer flex hover:underline">{title}</h2>

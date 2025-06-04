@@ -1,45 +1,47 @@
 import { assets } from "../assets/assets";
 import PlayerSongCard from "./PlayerSongCard";
 
-type PlayerProps = {
-    time: string;
-    timeLeft: string;
-};
-
-function Player(props: PlayerProps) {
-    const { time, timeLeft } = props;
-    const { shuffle_icon, prev_icon, next_icon, loop_icon, play_icon } = assets;
+function Player() {
 
     return (
-        <footer className="fixed  bottom-0 left-0 w-full z-50 bg-black flex items-center justify-between text-white h-[90px] ">
-            <div className="w-1/3 hidden lg:flex items-center">
-                <PlayerSongCard title="The Void" artist="Muse" src="https://i.scdn.co/image/ab67616d0000b2734cb163c1d111f77307c842b6"/>
-            </div>
-
-            <div className="w-1/3 flex flex-col items-center mt-2">
-                <div className="flex items-center justify-center gap-6">
-                    <img className="w-4 cursor-pointer" src={shuffle_icon} />
-                    <img className="w-4 cursor-pointer" src={prev_icon} />
-                    <div className=" rounded-full p-2">
-                        <img className="w-5 cursor-pointer" src={play_icon} />
-                    </div>
-                    <img className="w-4 cursor-pointer" src={next_icon} />
-                    <img className="w-4 cursor-pointer" src={loop_icon} />
-                </div>
-
-                <div className="flex items-center mt-2 gap-4 w-full max-w-[600px]">
-                    <span className="text-xs">{time}</span>
-                    <div className="relative w-full h-1 bg-neutral-700 rounded">
-                        <div className="absolute h-1 bg-white rounded w-[60%]"></div>
-                    </div>
-                    <span className="text-xs">{timeLeft}</span>
+        <footer className='h-[70px] w-screen bg-black flex items-center text-white px-4 relative'>
+            <div className='flex'>
+                <div className="">
+                    <PlayerSongCard src="https://i.scdn.co/image/ab67616d0000b273fc192c54d1823a04ffb6c8c9" title="Survival" artist="Muse"/>
                 </div>
             </div>
-            <div className="w-1/3 hidden lg:flex justify-end pr-4">
+            <div className='absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1'>
+                <div className='flex gap-6 items-center'>
+                    <img className='w-4 cursor-pointer' src={assets.shuffle_icon} alt="" />
+                    <img className='w-4 cursor-pointer' src={assets.prev_icon} alt="" />
+                    <img className='w-4 cursor-pointer' src={assets.play_icon} alt="" />
+                    <img className='w-4 cursor-pointer' src={assets.next_icon} alt="" />
+                    <img className='w-4 cursor-pointer' src={assets.loop_icon} alt="" />
+                </div>
+                <div className='flex items-center gap-4 mt-1'>
+                    <p className="text-[14px]">0:15</p>
+                    <div className='w-[60vw] max-w-[500px] bg-gray-300 rounded-full cursor-pointer'>
+                        <hr className='h-1 border-none w-0 bg-green-800 rounded-full' />
+                    </div>
+                    <p className="text-[14px]">4:20</p>
+                </div>
+            </div>
+            <div className="flex gap-5 items-center cursor-pointer ml-auto">
+                <img src={assets.plays_icon} alt="" className="w-4 h-4" />
+                <img src={assets.mic_icon} alt="" className="w-4 h-4" />
+                <img src={assets.queue_icon} alt="" className="w-4 h-4" />
+                <img src={assets.speaker_icon} alt="" className="w-4 h-4" />
                 
+                <div className="">
+                    <img src={assets.volume_icon} alt="" className="w-4 h-4" />
+                </div>
+                <div className='w-[100px] max-w-[500px] bg-gray-300 rounded-full cursor-pointer'>
+                    <hr className='h-1 border-none w-0 bg-green-800 rounded-full' />
+                </div>
+                <img src={assets.zoom_icon} alt="" className="w-4 h-4"/>
             </div>
         </footer>
-    );
+    )
 }
 
-export default Player;
+export default Player
