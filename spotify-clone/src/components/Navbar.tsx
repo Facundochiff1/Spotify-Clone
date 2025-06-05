@@ -19,10 +19,10 @@ function Navbar() {
           <input
             className="w-full bg-transparent text-white placeholder:font-semibold placeholder:text-[17px] placeholder:text-gray-400 focus:outline-none"
             type="text"
-            placeholder="¿Qué quieres reproducir?"/>
+            placeholder="What do you want to listen to?"/>
           <div className="flex items-center gap-2 pl-4">
-            <img className="h-4" src={assets.line_icon} alt="line" />
-            <img className="h-5 w-5 cursor-pointer" src={assets.folder_icon} alt="folder" />
+            <img className="h-4" src={assets.line_icon} alt="Line" />
+            <img className="h-5 w-5 cursor-pointer" src={assets.folder_icon} alt="Folder" />
           </div>
         </div>
       </div>

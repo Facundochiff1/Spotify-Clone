@@ -13,7 +13,7 @@ function SidebarSongCard(props: SidebarSongCardProps) {
         <div className="group relative flex flex-col px-2.5 py-1 cursor-pointer">
             <div className="flex items-center w-[300px] h-[63px] text-white gap-3">
                 <div className="w-[50px] h-[50px]">
-                    <img className="w-full h-full rounded-[5px] object-cover cursor-pointer" src={src} alt="Álbum image"/>
+                    <img className="w-full h-full rounded-[5px] object-cover cursor-pointer" src={src} alt="Album image"/>
                 </div>
 
                 <div className="absolute inset-0 bg-black/10 rounded-[5px] opacity-0 group-hover:opacity-100 transition duration-100"/>

@@ -1,7 +1,7 @@
 import DisplayHome from "./DisplayHome";
 import SongCard from "./SongCard";
 import SongCardContainer from "./SongCardContainer";
-import ButtonsDisplay from "./ButtonsDisaplay";
+import ButtonsDisplay from "./ButtonsDisplay";
 import AlbumCard from "./AlbumCard";
 import ALbumCardContainer from "./AlbumCardContainer";
 

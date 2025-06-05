@@ -12,11 +12,11 @@ function Player() {
             </div>
             <div className='absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1'>
                 <div className='flex gap-6 items-center'>
-                    <img className='w-4 cursor-pointer' src={assets.shuffle_icon} alt="" />
-                    <img className='w-4 cursor-pointer' src={assets.prev_icon} alt="" />
-                    <img className='w-4 cursor-pointer' src={assets.play_icon} alt="" />
-                    <img className='w-4 cursor-pointer' src={assets.next_icon} alt="" />
-                    <img className='w-4 cursor-pointer' src={assets.loop_icon} alt="" />
+                    <img className='w-4 cursor-pointer' src={assets.shuffle_icon} alt="Suffle control" />
+                    <img className='w-4 cursor-pointer' src={assets.prev_icon} alt="Prev song control" />
+                    <img className='w-4 cursor-pointer' src={assets.play_icon} alt="Play control" />
+                    <img className='w-4 cursor-pointer' src={assets.next_icon} alt="Next song control" />
+                    <img className='w-4 cursor-pointer' src={assets.loop_icon} alt="Loop control" />
                 </div>
                 <div className='flex items-center gap-4 mt-1'>
                     <p className="text-[14px]">0:15</p>
@@ -27,18 +27,18 @@ function Player() {
                 </div>
             </div>
             <div className="flex gap-5 items-center cursor-pointer ml-auto">
-                <img src={assets.plays_icon} alt="" className="w-4 h-4" />
-                <img src={assets.mic_icon} alt="" className="w-4 h-4" />
-                <img src={assets.queue_icon} alt="" className="w-4 h-4" />
-                <img src={assets.speaker_icon} alt="" className="w-4 h-4" />
+                <img src={assets.plays_icon} alt="Play" className="w-4 h-4" />
+                <img src={assets.mic_icon} alt="Lyrics" className="w-4 h-4" />
+                <img src={assets.queue_icon} alt="Queue" className="w-4 h-4" />
+                <img src={assets.speaker_icon} alt="Connect" className="w-4 h-4" />
                 
                 <div className="">
-                    <img src={assets.volume_icon} alt="" className="w-4 h-4" />
+                    <img src={assets.volume_icon} alt="Volume control" className="w-4 h-4" />
                 </div>
                 <div className='w-[100px] max-w-[500px] bg-gray-300 rounded-full cursor-pointer'>
                     <hr className='h-1 border-none w-0 bg-green-800 rounded-full' />
                 </div>
-                <img src={assets.zoom_icon} alt="" className="w-4 h-4"/>
+                <img src={assets.zoom_icon} alt="Zoom" className="w-4 h-4"/>
             </div>
         </footer>
     )
