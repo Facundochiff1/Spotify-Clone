@@ -1,6 +1,17 @@
 import { assets } from "../assets/assets";
+import { useState } from "react";
 
 function Navbar() {
+  const [ search, setSearch ] = useState("");
+
+  const searcher = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+
+  // const results = !search ? songs : songs:filter((song) => song.title.toLoweCase().includes(search.toLowerCase()));
+
+
+  
   return (
     <nav className="relative mt-1.5 top-0 left-0 w-full bg-[#000000] h-[60px] flex items-center px-4">
       <div className="flex items-center gap-4 ml-1 z-10">
@@ -19,6 +30,8 @@ function Navbar() {
           <input
             className="w-full bg-transparent text-white placeholder:font-semibold placeholder:text-[17px] placeholder:text-gray-400 focus:outline-none"
             type="text"
+            value={search}
+            onChange={searcher}
             placeholder="What do you want to listen to?"/>
           <div className="flex items-center gap-2 pl-4">
             <img className="h-4" src={assets.line_icon} alt="Line" />
