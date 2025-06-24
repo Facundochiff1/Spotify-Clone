@@ -203,7 +203,7 @@ function Display() {
         <div>
           <SongCardContainer>
             {forYou.sidebarSongs.map((sidebarSong) => {
-              return (
+              return ( 
                 <SongCard
                   key={sidebarSong.id}
                   title={sidebarSong.title}

@@ -4,7 +4,6 @@ import Display from "./Display"
 import SongDetailSidebar from "./SongDetailSidebar"
 import Navbar from "./Navbar"
 
-
 function Home() {
     return(
         <div className="flex flex-col justify-center items-center bg-black w-screen h-screen">
