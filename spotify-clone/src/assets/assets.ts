@@ -4,7 +4,7 @@ import like_icon from "./like.png";
 import loop_icon from "./loop.png";
 import mic_icon from "./mic.png";
 import next_icon from "./next.png";
-import play_icon from "./play.png";
+import play_icon from "./play-button-arrowhead (1).png";
 import pause_icon from "./pause.png";
 import plays_icon from "./plays.png";
 import prev_icon from "./prev.png";
@@ -31,8 +31,10 @@ import square_icon from "./square.png"
 import quit_icon from "./x.png"
 import minus_icon from "./minus.png"
 import list_icon from "./list.png"
+import play_white_icon from "./play-white.png";
 
 export const assets = {
+  play_white_icon,
   list_icon,
   quit_icon,
   minus_icon,

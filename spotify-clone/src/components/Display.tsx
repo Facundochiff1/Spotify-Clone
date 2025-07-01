@@ -4,6 +4,12 @@ import SongCardContainer from "./SongCardContainer";
 import ButtonsDisplay from "./ButtonsDisplay";
 import AlbumCard from "./AlbumCard";
 import ALbumCardContainer from "./AlbumCardContainer";
+import type { Song } from "../types";
+
+type DisplayProps = {
+  setCurrentSong?: (song: Song) => void;
+  setIsPlaying?: (isPlaying: boolean) => void;
+}
 
 type sidebarSongs = {
   id: number;
@@ -23,6 +29,7 @@ type createdForSection = {
   description: string;
   src: string;
   id: number;
+  title?: string
 };
 
 type favouriteArtistsSection = {
@@ -107,22 +114,26 @@ const response: Response = {
     createdForSection: [
       {
         id: 1,
-        description: 'Todo tipo de música seleccionada por tus gustos musicales',
+        title: 'Soda Stereo',
+        description: 'Soda Stereo',
         src: 'https://cdn-images.dzcdn.net/images/cover/cf1b043581e3712269787b0cbc833b00/1900x1900-000000-80-0-0.jpg',
       },
       {
         id: 2,
-        description: 'Escuchá las últimas canciones de los artistas del momento',
+        title: 'Taki Taki',
+        description: 'Reggaeton Hits',
         src: 'https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84962ce48d76ca903bff40df00',
       },
       {
         id: 3,
-        description: 'Soda Stereo, Gustavo Cerati, Las Pelotas',
+        title: 'Crimen',
+        description: 'Gustavo Cerati',
         src: 'https://yt3.googleusercontent.com/MrY2zTBlAeC-qrElJB8JY_a3QcSz7BJA_x3-00QyoSWSnejNsGgmmoexiWf1sQf5-NOSIURlYA=s900-c-k-c0x00ffffff-no-rj',
       },
       {
         id: 4,
-        description: 'Todas las semanas nuevos lanzamientos de Airbag',
+        title: 'Airbag',
+        description: 'Airbag',
         src: 'https://d22fxaf9t8d39k.cloudfront.net/2e78816a7bdc64af74ed56942ba0157dc94380413a79d8937c303eebe05d083420700.png',
       },
       // {
@@ -193,7 +204,7 @@ const response: Response = {
   },
 };
 
-function Display() {
+function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
   const { forYou } = response;
   return (
     <main className="bg-[#121212] w-[100%] m-2 mr-0 ml-0 px-8 rounded-[9px] text-white lg:w-[75%] overflow-y-auto">
@@ -203,11 +214,14 @@ function Display() {
         <div>
           <SongCardContainer>
             {forYou.sidebarSongs.map((sidebarSong) => {
-              return (
+              return ( 
                 <SongCard
                   key={sidebarSong.id}
                   title={sidebarSong.title}
                   src={sidebarSong.src}
+                  artist={sidebarSong.artist}
+                  setCurrentSong={setCurrentSong}
+                  setIsPlaying={setIsPlaying}
                 />
               );
             })}
@@ -219,8 +233,12 @@ function Display() {
               return(
                 <AlbumCard 
                   key={createdFor.id}
+                  title={createdFor.description}
+                  artist={createdFor.description}
                   description={createdFor.description}
                   src={createdFor.src}
+                  setCurrentSong={setCurrentSong}
+                  setIsPlaying={setIsPlaying}
                 />
               )
              })}
@@ -230,8 +248,12 @@ function Display() {
               return(
                 <AlbumCard 
                   key={heardAgain.id}
+                  title={heardAgain.description}
+                  artist={heardAgain.description}
                   description={heardAgain.description}
                   src={heardAgain.src}
+                  setCurrentSong={setCurrentSong}
+                  setIsPlaying={setIsPlaying}
                 />
               )
              })}
@@ -241,8 +263,12 @@ function Display() {
               return(
                 <AlbumCard 
                   key={favouriteArtists.id}
+                  title={favouriteArtists.description}
+                  artist={favouriteArtists.description}
                   description={favouriteArtists.description}
                   src={favouriteArtists.src}
+                  setCurrentSong={setCurrentSong}
+                  setIsPlaying={setIsPlaying}
                 />
               )
              })}

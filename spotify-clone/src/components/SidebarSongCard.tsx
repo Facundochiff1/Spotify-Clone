@@ -19,8 +19,8 @@ function SidebarSongCard(props: SidebarSongCardProps) {
                 <div className="absolute inset-0 bg-black/10 rounded-[5px] opacity-0 group-hover:opacity-100 transition duration-100"/>
                   
                 <div className="absolute inset-0 bg-[#fff]/5 rounded-[5px] opacity-0 group-hover:opacity-100 transition duration-100"> 
-                    <button className="absolute top-6 left-5 m-auto  w-7 h-7 flex opacity-0 group-hover:opacity-100  cursor-pointer transition duration-100 text-white">
-                        <img src={assets.play_icon} alt="Play" />
+                    <button className="absolute top-6 left-6 m-auto  w-5 h-5 flex opacity-0 group-hover:opacity-100  cursor-pointer transition duration-100 text-white">
+                        <img src={assets.play_white_icon} alt="Play" />
                     </button>
                 </div>
 
