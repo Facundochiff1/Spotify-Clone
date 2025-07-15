@@ -4,7 +4,7 @@ import SongCardContainer from "./SongCardContainer";
 import ButtonsDisplay from "./ButtonsDisplay";
 import AlbumCard from "./AlbumCard";
 import ALbumCardContainer from "./AlbumCardContainer";
-import type { Song } from "../types";
+import type { Song } from "../types/songType";
 
 type DisplayProps = {
   setCurrentSong?: (song: Song) => void;
@@ -56,10 +56,10 @@ const response: Response = {
     sidebarSongs: [
       {
         id: 1,
-        title: 'Paseando por Roma',
-        description: 'Song',
-        artist: 'Soda Stereo',
-        src: 'https://cdn-images.dzcdn.net/images/cover/cf1b043581e3712269787b0cbc833b00/1900x1900-000000-80-0-0.jpg',
+        title: 'Favoritos',
+        description: 'Playlist',
+        artist: 'Facu',
+        src: 'https://misc.scdn.co/liked-songs/liked-songs-640.jpg',
       },
       {
         id: 2,
@@ -136,26 +136,6 @@ const response: Response = {
         description: 'Airbag',
         src: 'https://d22fxaf9t8d39k.cloudfront.net/2e78816a7bdc64af74ed56942ba0157dc94380413a79d8937c303eebe05d083420700.png',
       },
-      // {
-      //   id: 5,
-      //   description: 'Soda Stereo y Los Enanitos Verdes',
-      //   src: 'https://cdn-images.dzcdn.net/images/cover/98f02ddfbb6419e5915ce980107d81b3/0x1900-000000-80-0-0.jpg',
-      // },
-      // {
-      //   id: 6,
-      //   description: 'Serú Girán y Sui Generis',
-      //   src: 'https://i.scdn.co/image/ab67616d0000b273cbbc34888dc24063d2ce5713',
-      // },
-      // {
-      //   id: 7,
-      //   description: 'Charly García, Fito Paez, Pappo y mucho más',
-      //   src: 'https://i.scdn.co/image/ab67616d0000b273a92726e7c18e60eff773e0ba',
-      // },
-      // {
-      //   id: 8,
-      //   description: 'No te pierdas lo más reciente de Muse',
-      //   src: 'https://upload.wikimedia.org/wikipedia/en/3/35/Muse_-_Origin_of_Symmetry_cover_art.png',
-      // },
     ],
     heardAgainSection: [
       {
@@ -214,13 +194,12 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
         <div>
           <SongCardContainer>
             {forYou.sidebarSongs.map((sidebarSong) => {
-              return ( 
+              return (
                 <SongCard
                   key={sidebarSong.id}
                   title={sidebarSong.title}
                   src={sidebarSong.src}
                   artist={sidebarSong.artist}
-                  setCurrentSong={setCurrentSong}
                   setIsPlaying={setIsPlaying}
                 />
               );
@@ -229,9 +208,9 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
         </div>
         <div>
           <ALbumCardContainer title="Created for Facu:)">
-             {forYou.createdForSection.map((createdFor) => {
-              return(
-                <AlbumCard 
+            {forYou.createdForSection.map((createdFor) => {
+              return (
+                <AlbumCard
                   key={createdFor.id}
                   title={createdFor.description}
                   artist={createdFor.description}
@@ -241,12 +220,12 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
                   setIsPlaying={setIsPlaying}
                 />
               )
-             })}
+            })}
           </ALbumCardContainer>
           <ALbumCardContainer title="Recently heard">
-             {forYou.heardAgainSection.map((heardAgain) => {
-              return(
-                <AlbumCard 
+            {forYou.heardAgainSection.map((heardAgain) => {
+              return (
+                <AlbumCard
                   key={heardAgain.id}
                   title={heardAgain.description}
                   artist={heardAgain.description}
@@ -256,12 +235,12 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
                   setIsPlaying={setIsPlaying}
                 />
               )
-             })}
+            })}
           </ALbumCardContainer>
           <ALbumCardContainer title="Your favourite artists">
-             {forYou.favouriteArtistsSection.map((favouriteArtists) => {
-              return(
-                <AlbumCard 
+            {forYou.favouriteArtistsSection.map((favouriteArtists) => {
+              return (
+                <AlbumCard
                   key={favouriteArtists.id}
                   title={favouriteArtists.description}
                   artist={favouriteArtists.description}
@@ -271,7 +250,7 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
                   setIsPlaying={setIsPlaying}
                 />
               )
-             })}
+            })}
           </ALbumCardContainer>
         </div>
       </div>

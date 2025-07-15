@@ -32,8 +32,10 @@ import quit_icon from "./x.png"
 import minus_icon from "./minus.png"
 import list_icon from "./list.png"
 import play_white_icon from "./play-white.png";
+import download_icon from "./arrow-down-to-line (1).png"
 
 export const assets = {
+  download_icon,
   play_white_icon,
   list_icon,
   quit_icon,

@@ -15,7 +15,7 @@ type SongDetailSidebarProps = {
 function SongDetailSidebar(props: SongDetailSidebarProps) {
     const { titleAlbum, src, titleSong, artist } = props;
     return(
-        <aside className="w-[28%] p-2 flex-col text-white lg:flex m- mr-0 ml-0 overflow-auto">
+        <aside className="w-[28%] p-2 flex-col text-white lg:flex mr-0 ml-0 overflow-auto">
             <nav className="group h-full bg-[#121212] rounded-t flex flex-col justify-around">
                 <div className="flex items-center mt-5 gap-2 px-3 justify-between relative">
                     <div className="flex items-center gap-2">
