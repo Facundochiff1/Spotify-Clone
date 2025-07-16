@@ -1,12 +1,15 @@
 import { assets } from "../assets/assets";
+import type { Song } from "../types/songType";
 import SongListItem from "./SongListItem";
 
-type FavoritesSongs = {
-  user: string;
-  numberSongs: number;
-};
+export type FavoriteSongCard = {
+  user?: string;
+  numberSongs?: number;
+  setCurrentSong: (song: Song) => void
+}
 
-function FavoritesSongs(props: FavoritesSongs) {
+function FavoritesSongs({ user, numberSongs, setCurrentSong }: FavoriteSongCard) {
+
   return (
     <div className="bg-[#121212c5] w-[100%] m-2 mr-0 ml-0 rounded-[9px] text-white lg:w-[75%] overflow-y-auto">
       <div className="flex flex-col">
@@ -22,7 +25,7 @@ function FavoritesSongs(props: FavoritesSongs) {
                 <span className="font-light">Playlist</span>
                 <h1 className="font-black text-7xl">Your Favorites</h1>
                 <div>
-                  <strong>{props.user}</strong> • {props.numberSongs}
+                  <strong>{user}</strong> • {numberSongs}
                 </div>
               </div>
             </div>
@@ -62,7 +65,7 @@ function FavoritesSongs(props: FavoritesSongs) {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <SongListItem />
+                  <SongListItem setCurrentSong={setCurrentSong}/>
                 </div>
               </section>
           </main>

@@ -1,14 +1,17 @@
-type SongListItem = {
-    id?: number;
-    src?: string;
-    title?: string;
-    artist?: string;
-    album?: string;
-    date?: string;
-    duration?: number;
+import type { Song } from "../types/songType";
+
+type SongListItemProps = {
+  setCurrentSong: (song: Song) => void;
+  
+};
+
+type SongFull = Song &{
+    duration: number;
+    id: number
+    date: string
 }
 
-const mockSongsAdapted: SongListItem[] = [
+const mockSongsAdapted: SongFull[] = [
     {
         id: 1,
         src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1_wZXuldJULVgofSODYHmqT_zr1EGSFw0qQ&s',
@@ -21,7 +24,7 @@ const mockSongsAdapted: SongListItem[] = [
     {
         id: 2,
         src: 'https://i.ytimg.com/vi/cns50Eh_-_Q/maxresdefault.jpg',
-        title: 'The Righteous Wrath Of An Honorable Man Que Es Muy Largo Y Se Truncará', // Test de truncado
+        title: 'The Righteous Wrath Of An Honorable Man',
         artist: 'Charly García',
         album: 'New History Warfare Vol. 2: Judges',
         date: '2025-06-30',
@@ -101,11 +104,11 @@ const mockSongsAdapted: SongListItem[] = [
     },
 ];
 
-function SongListItem() {
+function SongListItem({ setCurrentSong }: SongListItemProps) {
     return (
         mockSongsAdapted.map((song) => {
             return (
-                <div key={song.id} className="flex items-center text-[15px] mb-2 hover:bg-[#5c5c5c63] rounded p-2 cursor-pointer">
+                <div onClick={() => setCurrentSong(song)} key={song.id} className="flex items-center text-[15px] mb-2 hover:bg-[#5c5c5c63] rounded p-2 cursor-pointer">
                     <h1 className="w-8 flex-shrink-0 text-right pr-3">{song.id}</h1>
                     <img className="w-12 h-12 rounded-[5px] mr-3 flex-shrink-0" src={song.src} alt={song.title || 'Canción'} />
                     <div className="flex flex-col flex-grow min-w-0 max-w-[calc(35%_-_70px)] mr-10 text-left">

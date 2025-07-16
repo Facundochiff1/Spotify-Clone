@@ -5,6 +5,7 @@ import ButtonsDisplay from "./ButtonsDisplay";
 import AlbumCard from "./AlbumCard";
 import ALbumCardContainer from "./AlbumCardContainer";
 import type { Song } from "../types/songType";
+import { Link } from "react-router";
 
 type DisplayProps = {
   setCurrentSong?: (song: Song) => void;
@@ -23,12 +24,21 @@ type heardAgainSection = {
   description: string;
   src: string;
   id: number;
+  listeners: string;
+  year: string;
+  duration: string
+  artist: string
+  title?: string
 };
 
 type createdForSection = {
   description: string;
   src: string;
   id: number;
+  listeners: string;
+  year: string;
+  duration: string
+  artist: string
   title?: string
 };
 
@@ -36,9 +46,14 @@ type favouriteArtistsSection = {
   description: string;
   src: string;
   id: number;
+  listeners: string;
+  year: string;
+  duration: string
+  artist: string
+  title?: string
 }
 
-type Response = {
+export type Response = {
   forYou: {
     title: string;
     description: string;
@@ -49,7 +64,7 @@ type Response = {
   };
 };
 
-const response: Response = {
+export const response: Response = {
   forYou: {
     title: 'For you',
     description: 'Recomended for you',
@@ -113,72 +128,120 @@ const response: Response = {
     ],
     createdForSection: [
       {
-        id: 1,
-        title: 'Soda Stereo',
-        description: 'Soda Stereo',
-        src: 'https://cdn-images.dzcdn.net/images/cover/cf1b043581e3712269787b0cbc833b00/1900x1900-000000-80-0-0.jpg',
+        id: 9,
+        title: 'Giros',
+        description: 'Fito Páez',
+        src: 'https://i.scdn.co/image/ab67616d00001e02921417baf700cc9da1d43b80',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Fito Páez'
       },
       {
-        id: 2,
+        id: 10,
         title: 'Taki Taki',
         description: 'Reggaeton Hits',
         src: 'https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84962ce48d76ca903bff40df00',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Soda Stereo'
       },
       {
-        id: 3,
+        id: 11,
         title: 'Crimen',
         description: 'Gustavo Cerati',
         src: 'https://yt3.googleusercontent.com/MrY2zTBlAeC-qrElJB8JY_a3QcSz7BJA_x3-00QyoSWSnejNsGgmmoexiWf1sQf5-NOSIURlYA=s900-c-k-c0x00ffffff-no-rj',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Soda Stereo'
       },
       {
-        id: 4,
+        id: 12,
         title: 'Airbag',
         description: 'Airbag',
         src: 'https://d22fxaf9t8d39k.cloudfront.net/2e78816a7bdc64af74ed56942ba0157dc94380413a79d8937c303eebe05d083420700.png',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Soda Stereo'
       },
     ],
     heardAgainSection: [
       {
-        id: 1,
+        id: 13,
         description: 'Artic Monkeys',
         src: 'https://i.scdn.co/image/ab67616d00001e024ae1c4c5c45aabe565499163',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Soda Stereo'
       },
       {
-        id: 2,
+        id: 14,
         description: 'Coldplay',
         src: 'https://i.scdn.co/image/ab67616d0000b273de09e02aa7febf30b7c02d82',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Soda Stereo'
       },
       {
-        id: 3,
+        id: 15,
         description: 'By the Way',
         src: 'https://i.scdn.co/image/ab67616d0000b273fdbcee40748537ff80a7af70',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Soda Stereo'
       },
       {
-        id: 4,
+        id: 16,
         description: 'Pink Floyd',
         src: 'https://i.scdn.co/image/ab67616d0000b273ea7caaff71dea1051d49b2fe',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Soda Stereo'
       },
     ],
     favouriteArtistsSection: [
       {
-        id: 1,
+        id: 17,
         description: 'Guns N Roses',
         src: 'https://umusicstore.com.ar/cdn/shop/files/51vA9Ga_RSL.jpg?v=1698775521',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Soda Stereo'
       },
       {
-        id: 2,
+        id: 18,
         description: 'Guns N Roses',
         src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2PjLHqfSE46Ae8Cwd4kk53Lduq4x0gKt7kA&s',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Soda Stereo'
       },
       {
-        id: 3,
+        id: 19,
         description: 'Pink Floyd',
         src: 'https://i.scdn.co/image/ab67616d0000b2738431fb4cb38f8ee96d3434c0',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Soda Stereo'
       },
       {
-        id: 4,
+        id: 20,
         description: 'Muse',
         src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSHQPpXTKfNeROXnH9j7tj4nn8Kd-grc9MXQ&s',
+        duration: '2:24',
+        year: '1998',
+        listeners: '22,876,234',
+        artist: 'Soda Stereo'
       },
     ]
   },
@@ -190,17 +253,18 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
     <main className="bg-[#121212] w-[100%] m-2 mr-0 ml-0 px-8 rounded-[9px] text-white lg:w-[75%] overflow-y-auto">
       <DisplayHome />
       <ButtonsDisplay />
-      <div className="flex flex-col">
+      <div className="flex flex-col ">
         <div>
           <SongCardContainer>
             {forYou.sidebarSongs.map((sidebarSong) => {
               return (
                 <SongCard
-                  key={sidebarSong.id}
-                  title={sidebarSong.title}
-                  src={sidebarSong.src}
-                  artist={sidebarSong.artist}
-                  setIsPlaying={setIsPlaying}
+                id={sidebarSong.id}
+                key={sidebarSong.id}
+                title={sidebarSong.title}
+                src={sidebarSong.src}
+                artist={sidebarSong.artist}
+                setIsPlaying={setIsPlaying}
                 />
               );
             })}
@@ -210,7 +274,8 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
           <ALbumCardContainer title="Created for Facu:)">
             {forYou.createdForSection.map((createdFor) => {
               return (
-                <AlbumCard
+                <Link key={createdFor.id} to={`/song/${createdFor.id}`}>
+                  <AlbumCard
                   key={createdFor.id}
                   title={createdFor.description}
                   artist={createdFor.description}
@@ -218,14 +283,17 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
                   src={createdFor.src}
                   setCurrentSong={setCurrentSong}
                   setIsPlaying={setIsPlaying}
-                />
+                  />
+                </Link>
+
               )
             })}
           </ALbumCardContainer>
           <ALbumCardContainer title="Recently heard">
             {forYou.heardAgainSection.map((heardAgain) => {
               return (
-                <AlbumCard
+                <Link key={heardAgain.id} to={`/song/${heardAgain.id}`}>
+                  <AlbumCard
                   key={heardAgain.id}
                   title={heardAgain.description}
                   artist={heardAgain.description}
@@ -233,22 +301,25 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
                   src={heardAgain.src}
                   setCurrentSong={setCurrentSong}
                   setIsPlaying={setIsPlaying}
-                />
+                  />
+                </Link>
               )
             })}
           </ALbumCardContainer>
           <ALbumCardContainer title="Your favourite artists">
             {forYou.favouriteArtistsSection.map((favouriteArtists) => {
               return (
-                <AlbumCard
-                  key={favouriteArtists.id}
-                  title={favouriteArtists.description}
-                  artist={favouriteArtists.description}
-                  description={favouriteArtists.description}
-                  src={favouriteArtists.src}
-                  setCurrentSong={setCurrentSong}
-                  setIsPlaying={setIsPlaying}
-                />
+                <Link key={favouriteArtists.id} to={`/song/${favouriteArtists.id}`} >
+                  <AlbumCard
+                    key={favouriteArtists.id}
+                    title={favouriteArtists.description}
+                    artist={favouriteArtists.description}
+                    description={favouriteArtists.description}
+                    src={favouriteArtists.src}
+                    setCurrentSong={setCurrentSong}
+                    setIsPlaying={setIsPlaying}
+                  />
+                </Link>
               )
             })}
           </ALbumCardContainer>

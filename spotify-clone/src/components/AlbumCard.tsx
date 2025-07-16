@@ -13,7 +13,8 @@ function AlbumCard({ description, src, title, artist, setCurrentSong, setIsPlayi
 
   function handleClick() {
     if (title && artist) {
-      setCurrentSong?.({ title, artist, src });
+      setCurrentSong?.({
+        title, artist, src, album: ""});
       setIsPlaying?.(true);
     }
   }

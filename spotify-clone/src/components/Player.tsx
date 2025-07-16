@@ -32,7 +32,7 @@ function Player({ currentSong, isPlaying, togglePlay }: PlayerProps) {
         </div>
         <div className='flex items-center gap-4 mt-1'>
           <p className="text-[14px]">0:15</p>
-          <input type="range" className="w-[500px] h-1 bg-gray-400 rounded-lg appearance-none" />
+          <input min={0} max={100} value={0} type="range" className="w-[500px] h-1 bg-gray-400 rounded-lg appearance-none" />
           <p className="text-[14px]">4:20</p>
         </div>
       </div>

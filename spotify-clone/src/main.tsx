@@ -7,13 +7,14 @@ import SongDetail from './pages/SongDetail.tsx'
 import PageNotFound from './pages/PageNotFound.tsx'
 import Favorites from './pages/Favorites.tsx'
 
+
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<App />}/>
                 <Route path='/song/:id' element={<SongDetail />}/>
-                <Route path='/category/:id'/>
+                <Route path='/category/:id' element={<SongDetail />}/>
                 <Route path='favorites' element={<Favorites />}/>
                 <Route path='*' element={<PageNotFound />}/>
             </Routes>
