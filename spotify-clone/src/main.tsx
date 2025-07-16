@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import SongDetail from './pages/SongDetail.tsx'
 import PageNotFound from './pages/PageNotFound.tsx'
 import Favorites from './pages/Favorites.tsx'
+import CategoryDetail from './pages/CategoryDetail.tsx'
 
 
 createRoot(document.getElementById('root')!).render(
@@ -14,7 +15,7 @@ createRoot(document.getElementById('root')!).render(
             <Routes>
                 <Route path='/' element={<App />}/>
                 <Route path='/song/:id' element={<SongDetail />}/>
-                <Route path='/category/:id' element={<SongDetail />}/>
+                <Route path='/category/:id' element={<CategoryDetail />}/>
                 <Route path='favorites' element={<Favorites />}/>
                 <Route path='*' element={<PageNotFound />}/>
             </Routes>

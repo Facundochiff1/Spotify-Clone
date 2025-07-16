@@ -132,8 +132,8 @@ export const response: Response = {
         title: 'Giros',
         description: 'Fito Páez',
         src: 'https://i.scdn.co/image/ab67616d00001e02921417baf700cc9da1d43b80',
-        duration: '2:24',
-        year: '1998',
+        duration: '3:40',
+        year: '1985',
         listeners: '22,876,234',
         artist: 'Fito Páez'
       },
@@ -142,108 +142,116 @@ export const response: Response = {
         title: 'Taki Taki',
         description: 'Reggaeton Hits',
         src: 'https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84962ce48d76ca903bff40df00',
-        duration: '2:24',
-        year: '1998',
-        listeners: '22,876,234',
-        artist: 'Soda Stereo'
+        duration: '3:32',
+        year: '2018',
+        listeners: '32,875,224',
+        artist: 'DJ Snake'
       },
       {
         id: 11,
         title: 'Crimen',
         description: 'Gustavo Cerati',
         src: 'https://yt3.googleusercontent.com/MrY2zTBlAeC-qrElJB8JY_a3QcSz7BJA_x3-00QyoSWSnejNsGgmmoexiWf1sQf5-NOSIURlYA=s900-c-k-c0x00ffffff-no-rj',
-        duration: '2:24',
-        year: '1998',
-        listeners: '22,876,234',
-        artist: 'Soda Stereo'
+        duration: '4:10',
+        year: '2006',
+        listeners: '18,235,980',
+        artist: 'Gustavo Cerati'
       },
       {
         id: 12,
         title: 'Airbag',
         description: 'Airbag',
         src: 'https://d22fxaf9t8d39k.cloudfront.net/2e78816a7bdc64af74ed56942ba0157dc94380413a79d8937c303eebe05d083420700.png',
-        duration: '2:24',
-        year: '1998',
-        listeners: '22,876,234',
-        artist: 'Soda Stereo'
+        duration: '3:50',
+        year: '2011',
+        listeners: '15,321,411',
+        artist: 'Airbag'
       },
     ],
     heardAgainSection: [
       {
         id: 13,
+        title: 'Artic Monkeys',
         description: 'Artic Monkeys',
         src: 'https://i.scdn.co/image/ab67616d00001e024ae1c4c5c45aabe565499163',
-        duration: '2:24',
-        year: '1998',
-        listeners: '22,876,234',
-        artist: 'Soda Stereo'
+        duration: '3:18',
+        year: '2013',
+        listeners: '20,456,234',
+        artist: 'Arctic Monkeys'
       },
       {
         id: 14,
+        title: 'Coldplay',
         description: 'Coldplay',
         src: 'https://i.scdn.co/image/ab67616d0000b273de09e02aa7febf30b7c02d82',
-        duration: '2:24',
-        year: '1998',
-        listeners: '22,876,234',
-        artist: 'Soda Stereo'
+        duration: '4:02',
+        year: '2015',
+        listeners: '45,876,212',
+        artist: 'Coldplay'
       },
       {
         id: 15,
-        description: 'By the Way',
+        title: 'By the Way',
+        description: 'Red Hot Chili Peppers',
         src: 'https://i.scdn.co/image/ab67616d0000b273fdbcee40748537ff80a7af70',
-        duration: '2:24',
-        year: '1998',
-        listeners: '22,876,234',
-        artist: 'Soda Stereo'
+        duration: '3:36',
+        year: '2002',
+        listeners: '28,123,567',
+        artist: 'Red Hot Chili Peppers'
       },
       {
         id: 16,
+        title: 'Pink Floyd',
         description: 'Pink Floyd',
         src: 'https://i.scdn.co/image/ab67616d0000b273ea7caaff71dea1051d49b2fe',
-        duration: '2:24',
-        year: '1998',
-        listeners: '22,876,234',
-        artist: 'Soda Stereo'
+        duration: '5:04',
+        year: '1979',
+        listeners: '35,432,908',
+        artist: 'Pink Floyd'
       },
     ],
     favouriteArtistsSection: [
       {
         id: 17,
+        title: 'Guns N Roses',
         description: 'Guns N Roses',
         src: 'https://umusicstore.com.ar/cdn/shop/files/51vA9Ga_RSL.jpg?v=1698775521',
-        duration: '2:24',
-        year: '1998',
-        listeners: '22,876,234',
-        artist: 'Soda Stereo'
+        duration: '5:33',
+        year: '1987',
+        listeners: '39,876,543',
+        artist: 'Guns N\' Roses'
       },
       {
         id: 18,
+        title: 'Guns N Roses',
         description: 'Guns N Roses',
         src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2PjLHqfSE46Ae8Cwd4kk53Lduq4x0gKt7kA&s',
-        duration: '2:24',
-        year: '1998',
-        listeners: '22,876,234',
-        artist: 'Soda Stereo'
+        duration: '4:20',
+        year: '1991',
+        listeners: '39,876,543',
+        artist: 'Guns N\' Roses'
       },
       {
         id: 19,
+        title: 'Pink Floyd',
         description: 'Pink Floyd',
         src: 'https://i.scdn.co/image/ab67616d0000b2738431fb4cb38f8ee96d3434c0',
-        duration: '2:24',
-        year: '1998',
-        listeners: '22,876,234',
-        artist: 'Soda Stereo'
+        duration: '6:23',
+        year: '1973',
+        listeners: '35,432,908',
+        artist: 'Pink Floyd'
       },
       {
         id: 20,
+        title: 'Muse',
         description: 'Muse',
         src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSHQPpXTKfNeROXnH9j7tj4nn8Kd-grc9MXQ&s',
-        duration: '2:24',
-        year: '1998',
-        listeners: '22,876,234',
-        artist: 'Soda Stereo'
+        duration: '4:01',
+        year: '2015',
+        listeners: '25,654,321',
+        artist: 'Muse'
       },
-    ]
+    ],
   },
 };
 
@@ -257,16 +265,25 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
         <div>
           <SongCardContainer>
             {forYou.sidebarSongs.map((sidebarSong) => {
-              return (
+              const card = (
                 <SongCard
-                id={sidebarSong.id}
-                key={sidebarSong.id}
-                title={sidebarSong.title}
-                src={sidebarSong.src}
-                artist={sidebarSong.artist}
-                setIsPlaying={setIsPlaying}
+                  id={sidebarSong.id}
+                  key={sidebarSong.id}
+                  title={sidebarSong.title}
+                  src={sidebarSong.src}
+                  artist={sidebarSong.artist}
+                  setIsPlaying={setIsPlaying}
+                  setCurrentSong={setCurrentSong}
                 />
-              );
+              )              
+              if (sidebarSong.id === 1) {
+                return (
+                  <Link to={'/favorites'}>
+                    {card}
+                  </Link>
+                )
+              }
+              return card
             })}
           </SongCardContainer>
         </div>

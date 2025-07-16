@@ -1,21 +1,26 @@
 import { assets } from "../assets/assets";
 import type { FavoriteSongCard } from "./FavoritesSongs";
-import type { Song } from "../types/songType";
+import {  type Song } from "../types/songType";
+import { response } from "./Display";
 
 type SongInfoProps = FavoriteSongCard & {
     songId: string;
-    song: string;
-    artist: string
-    year: string
-    duration: string;
-    listeners: string
     currentSong?: Song | null;
     isPlayingDetail?: boolean;
     togglePlayDetail?: () => void;
 }
 
 
-function SongDetail({ artist, song, year, duration, listeners, isPlayingDetail, togglePlayDetail}: SongInfoProps) {
+function SongDetail({ songId, isPlayingDetail, togglePlayDetail}: SongInfoProps) {
+
+    const allSongs = [
+        ...response.forYou.createdForSection,
+        ...response.forYou.heardAgainSection,
+        ...response.forYou.favouriteArtistsSection
+    ];
+
+    const songsFound = allSongs.find((song) => song.id === parseInt(songId))
+
     return (
         <div className="bg-[#121212c5] w-[100%] m-2 mr-0 ml-0 rounded-[9px] text-white lg:w-[75%] overflow-y-auto">
             <div className="flex flex-col">
@@ -24,12 +29,12 @@ function SongDetail({ artist, song, year, duration, listeners, isPlayingDetail, 
                         <div className="flex mb-32">
                             <img
                                 className="h-[224px] w-[226px] ml-6 rounded"
-                                src="https://i.scdn.co/image/ab67616d00001e02921417baf700cc9da1d43b80"
+                                src={songsFound?.src}
                             />
                             <div className="flex flex-col items-start px-6 gap-6 mt-14">
                                 <span className="font-light">Song Information</span>
-                                <h1 className="font-black text-7xl">Giros</h1>
-                                <div className="text-[14px] text-white"><strong>{artist}</strong> • {song} • {year} • {duration} • {listeners}</div>
+                                <h1 className="font-black text-7xl">{songsFound?.title}</h1>
+                                <div className="text-[14px] text-white"><strong>{songsFound?.artist}</strong> • {songsFound?.title} • {songsFound?.year} • {songsFound?.duration} • {songsFound?.listeners}</div>
                             </div>
                         </div>
                     </header>
@@ -73,10 +78,10 @@ function SongDetail({ artist, song, year, duration, listeners, isPlayingDetail, 
                                 </p>
                             <section className="flex mt-5 items-center hover:bg-[#504e4e44] w-[970px] rounded cursor-pointer p-2 px-2 font-bold">
                                 <div className="flex items-center justify-center gap-4">
-                                    <img className="rounded-full h-[78px] w-[78px]" src="https://i.scdn.co/image/ab67616d00001e02921417baf700cc9da1d43b80" alt="Artist info" />
+                                    <img className="rounded-full h-[78px] w-[78px]" src={songsFound?.src} alt="Artist info" />
                                     <div>
                                         <p className="text-[14px]">Artista</p>
-                                        <a href="#" className="text-[16px] hover:underline">{artist}</a>
+                                        <a href="#" className="text-[16px] hover:underline">{songsFound?.artist}</a>
                                     </div>
                                 </div>
                             </section>

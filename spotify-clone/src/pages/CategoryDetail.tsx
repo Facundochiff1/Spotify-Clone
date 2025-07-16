@@ -1,13 +1,13 @@
-import SideBar from "./Sidebar"
-import Player from "./Player"
-import Display from "./Display"
-import SongDetailSidebar from "./SongDetailSidebar"
-import Navbar from "./Navbar"
+import SideBar from "../components/Sidebar"
+import Player from "../components/Player"
+import Display from "../components/Display"
+import SongDetailSidebar from "../components/SongDetailSidebar"
+import Navbar from "../components/Navbar"
 import { useState } from "react"
 import type { Song } from "../types/songType"
 
 
-function Home() {
+function CategoryDetail() {
     const [currentSong, setCurrentSong] = useState<Song | null>(null);
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
@@ -31,4 +31,4 @@ function Home() {
 };
 
 
-export default Home;
+export default CategoryDetail;

@@ -21,7 +21,7 @@ function Favorites() {
             <div className="flex">
             <SideBar />
             <FavoritesSongs user="Facu:)" numberSongs={79} setCurrentSong={setCurrentSong} />
-            <SongDetailSidebar titleAlbum="Your Favorites" titleSong="Panama" src="https://i.scdn.co/image/ab67616d0000b273b414c63fb435b622238c15ed" artist="Van Halen"/>
+            <SongDetailSidebar titleAlbum="Your Favorites" titleSong="Survival" src="https://i.scdn.co/image/ab67616d0000b273fc192c54d1823a04ffb6c8c9" artist="Muse"/>
             
             </div>
         </div>
