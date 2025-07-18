@@ -2,7 +2,7 @@ import SideBar from "../components/Sidebar";
 import SongDetailSidebar from "../components/SongDetailSidebar";
 import Navbar from "../components/Navbar";
 import Player from "../components/Player";
-import SongInfo from "../components/SongDetailContent";
+import SongDetailContent from "../components/SongDetailContent";
 import type { Song } from "../types/songType";
 import { useState } from "react";
 import { useParams } from "react-router";
@@ -27,7 +27,7 @@ function SongDetail() {
         <div className="flex flex-1 overflow-y-hidden bg-black">
             <div className="flex">
                 <SideBar />
-                <SongInfo togglePlayDetail={togglePlayDetail} isPlayingDetail={isPlayingDetail} setCurrentSong={setCurrentSong} songId={id!} />
+                <SongDetailContent togglePlayDetail={togglePlayDetail} isPlayingDetail={isPlayingDetail} setCurrentSong={setCurrentSong} songId={id!} />
                 <SongDetailSidebar titleAlbum="FFP Muse" titleSong="Survival" src="https://i.scdn.co/image/ab67616d0000b273fc192c54d1823a04ffb6c8c9" artist="Muse"/>
             </div>
         </div>

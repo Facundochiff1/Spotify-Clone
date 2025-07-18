@@ -3,7 +3,7 @@ import type { FavoriteSongCard } from "./FavoritesSongs";
 import {  type Song } from "../types/songType";
 import { response } from "./Display";
 
-type SongInfoProps = FavoriteSongCard & {
+type SongDetailContentProps = FavoriteSongCard & {
     songId: string;
     currentSong?: Song | null;
     isPlayingDetail?: boolean;
@@ -11,7 +11,7 @@ type SongInfoProps = FavoriteSongCard & {
 }
 
 
-function SongDetail({ songId, isPlayingDetail, togglePlayDetail}: SongInfoProps) {
+function SongDetailContent({ songId, isPlayingDetail, togglePlayDetail}: SongDetailContentProps) {
 
     const allSongs = [
         ...response.forYou.createdForSection,
@@ -22,7 +22,7 @@ function SongDetail({ songId, isPlayingDetail, togglePlayDetail}: SongInfoProps)
     const songsFound = allSongs.find((song) => song.id === parseInt(songId))
 
     return (
-        <div className="bg-[#121212c5] w-[100%] m-2 mr-0 ml-0 rounded-[9px] text-white lg:w-[75%] overflow-y-auto">
+        <div className="bg-[#121212c5]  m-2 mr-0 ml-0 rounded-[9px] text-white lg:w-[75%] overflow-y-auto">
             <div className="flex flex-col">
                 <div>
                     <header className="flex items-center h-[450px] bg-gradient-to-b from-[#7757b8d2] via-[#5c33a4c9] to-transparent w-full">
@@ -93,4 +93,4 @@ function SongDetail({ songId, isPlayingDetail, togglePlayDetail}: SongInfoProps)
     );
 }
 
-export default SongDetail;
+export default SongDetailContent;
