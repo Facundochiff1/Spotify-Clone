@@ -15,12 +15,12 @@ type CategoryDetailContentProps = {
 }
 
 
-function CategoryDetailContent ({}: CategoryDetailContentProps ) {
+function CategorySongListContent ({}: CategoryDetailContentProps ) {
     return (
         <div className="max-w-[1200px] px-8 bg-gradient-to-b from-[#202020d2] via-[#161616c9] to-transparent w-[100%] m-2 mr-0 ml-0 rounded-[9px] text-white lg:w-[75%] overflow-y-auto">
             <DisplayHome />
             <ButtonsDisplay />
-            <section className="flex mt-12 flex-col justify-center w-full gap- ">
+            <section className="flex mt-12 flex-col justify-center w-full">
                 <div className="h-[100px] w-full">
                     <h1 className="text-5xl px-2 py-4 mt-2 font-black flex">Explore all categories</h1>
                 </div>
@@ -46,4 +46,4 @@ function CategoryDetailContent ({}: CategoryDetailContentProps ) {
     )
 };
 
-export default CategoryDetailContent;
+export default CategorySongListContent;

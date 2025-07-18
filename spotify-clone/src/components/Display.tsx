@@ -53,6 +53,13 @@ type favouriteArtistsSection = {
   title?: string
 }
 
+type discoverNewMusic = {
+  description: string;
+  title: string;
+  src: string;
+  id: number;
+}
+
 export type Response = {
   forYou: {
     title: string;
@@ -61,6 +68,7 @@ export type Response = {
     createdForSection: createdForSection[];
     heardAgainSection: heardAgainSection[];
     favouriteArtistsSection: favouriteArtistsSection[];
+    discoverNewMusic: discoverNewMusic[];
   };
 };
 
@@ -71,7 +79,7 @@ export const response: Response = {
     sidebarSongs: [
       {
         id: 1,
-        title: 'Favoritos',
+        title: 'Favorites',
         description: 'Playlist',
         artist: 'Facu',
         src: 'https://misc.scdn.co/liked-songs/liked-songs-640.jpg',
@@ -252,13 +260,33 @@ export const response: Response = {
         artist: 'Muse'
       },
     ],
+    discoverNewMusic: [
+      {
+        id: 21,
+        title: 'News every friday',
+        description: 'Guns N Roses',
+        src: 'https://imgproxy.ra.co/_/quality:66/aHR0cHM6Ly9pbWFnZXMucmEuY28vZGM3ZjgwMWY1NzEyZjQzZTMzYmFhYTMzZDI2NDkwYjIzMzA0Mjc2ZC5qcGc=',
+      },
+      {
+        id: 22,
+        title: 'Weekly Discovery',
+        description: 'Guns N Roses',
+        src: 'https://newjams-images.scdn.co/image/ab676477000033ad/dt/v3/discover-weekly/39MO4rpxkctRc574LExDwQ==/ZGlkaWRpZGlkaWRpZGlkaQ==',
+      },
+      {
+        id: 23,
+        title: 'Top 2025',
+        description: 'Pink Floyd',
+        src: 'https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da848bc863a162e124e43902d5e2',
+      },
+    ],
   },
 };
 
 function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
   const { forYou } = response;
   return (
-    <main className="bg-[#121212] w-[100%] m-2 mr-0 ml-0 px-8 rounded-[9px] text-white lg:w-[75%] overflow-y-auto">
+    <main className="bg-[#121212] max-w-[1200px] w-[100%] m-2 mr-0 ml-0 px-8 rounded-[9px] text-white lg:w-[75%] overflow-y-auto">
       <DisplayHome />
       <ButtonsDisplay />
       <div className="flex flex-col ">
@@ -296,7 +324,6 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
                   key={createdFor.id}
                   title={createdFor.description}
                   artist={createdFor.description}
-                  description={createdFor.description}
                   src={createdFor.src}
                   setCurrentSong={setCurrentSong}
                   setIsPlaying={setIsPlaying}
@@ -314,7 +341,6 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
                   key={heardAgain.id}
                   title={heardAgain.description}
                   artist={heardAgain.description}
-                  description={heardAgain.description}
                   src={heardAgain.src}
                   setCurrentSong={setCurrentSong}
                   setIsPlaying={setIsPlaying}
@@ -331,7 +357,6 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
                     key={favouriteArtists.id}
                     title={favouriteArtists.description}
                     artist={favouriteArtists.description}
-                    description={favouriteArtists.description}
                     src={favouriteArtists.src}
                     setCurrentSong={setCurrentSong}
                     setIsPlaying={setIsPlaying}

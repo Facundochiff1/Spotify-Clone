@@ -1,4 +1,4 @@
-type cateogiresSongs = {
+type categoriesSongs = {
     id: number;
     titleCategory: string;
     src: string;
@@ -7,7 +7,7 @@ type cateogiresSongs = {
 
 type Categories = {
   forYou: {
-    categoriesSongs: cateogiresSongs[];
+    categoriesSongs: categoriesSongs[];
   };
 };
 
