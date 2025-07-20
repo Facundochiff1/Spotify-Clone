@@ -1,17 +1,19 @@
-import type { Song } from "../types";
+ import type { Song } from "../types/songType";
 
 type SongCardProps = {
+  id: number;
   src: string;
   title: string;
-  artist: string
+  artist: string;
+  album?: string; 
   setCurrentSong?: (song: Song) => void;
   setIsPlaying?: (isPlaying: boolean) => void;
 }
 
-function SongCard({ src, title, setCurrentSong, setIsPlaying }: SongCardProps) {
+function SongCard({ src, title, artist, album, setCurrentSong, setIsPlaying }: SongCardProps) {
 
-  function handleClick() {
-    setCurrentSong?.({ title, src } as Song);
+  const handleClick = () => {
+    setCurrentSong?.({ title, src, artist, album: album ?? "" });
     setIsPlaying?.(true);
   }
 
@@ -28,6 +30,6 @@ function SongCard({ src, title, setCurrentSong, setIsPlaying }: SongCardProps) {
       </div>
     </div>
   )
-}
+};
 
 export default SongCard;

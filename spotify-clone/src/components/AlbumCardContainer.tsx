@@ -1,7 +1,7 @@
 import { type ReactNode } from "react"
 
 type ALbumCardContainerProps = {
-    title: string;
+    title?: string;
     children: ReactNode;
 }
 

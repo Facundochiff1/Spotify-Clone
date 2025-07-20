@@ -1,11 +1,11 @@
 import { assets } from "../assets/assets";
 import PlayerSongCard from "./PlayerSongCard";
-import type { Song } from "../types";
+import type { Song } from "../types/songType";
 
 type PlayerProps = {
-    currentSong: Song | null;
-    isPlaying: boolean;
-    togglePlay: () => void;
+  currentSong?: Song | null;
+  isPlaying?: boolean;
+  togglePlay?: () => void;
 }
 
 function Player({ currentSong, isPlaying, togglePlay }: PlayerProps) {
@@ -13,7 +13,7 @@ function Player({ currentSong, isPlaying, togglePlay }: PlayerProps) {
     <footer className='h-[80px] w-screen bg-black flex items-center text-white px-4 relative'>
       <div className='flex'>
         {currentSong && (
-          <div className="mt-2">
+          <div className="mt-2 mb-2">
             <PlayerSongCard src={currentSong.src} title={currentSong.title} artist={currentSong.artist} />
           </div>
         )}
@@ -32,7 +32,7 @@ function Player({ currentSong, isPlaying, togglePlay }: PlayerProps) {
         </div>
         <div className='flex items-center gap-4 mt-1'>
           <p className="text-[14px]">0:15</p>
-          <input type="range" className="w-[500px] h-1 bg-gray-400 rounded-lg appearance-none" />
+          <input min={0} max={100} value={0} type="range" className="w-[500px] h-1 bg-gray-400 rounded-lg appearance-none" />
           <p className="text-[14px]">4:20</p>
         </div>
       </div>

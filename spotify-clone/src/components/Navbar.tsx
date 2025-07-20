@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { assets } from "../assets/assets";
 import { useState, useRef } from "react";
 
@@ -44,9 +45,9 @@ function Navbar() {
       </div>
 
       <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center gap-3 w-[650px] max-w-[90%] z-50">
-        <div className="h-14 w-16 bg-[#1f1f1f] hover:bg-[#313030] rounded-full flex items-center justify-center cursor-pointer">
+        <Link to="/" className="h-14 w-16 bg-[#1f1f1f] hover:bg-[#313030] rounded-full flex items-center justify-center cursor-pointer">
           <img className="h-8 w-8" src={assets.home_icon} alt="Home" />
-        </div>
+        </Link>
 
         <div className="flex items-center bg-[#1f1f1f] hover:bg-[#313030] rounded-full w-full h-14 px-4">
           <img className="h-6 mr-2" src={assets.search_icon} alt="Search" />
