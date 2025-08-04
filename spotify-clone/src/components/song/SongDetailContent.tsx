@@ -1,7 +1,7 @@
-import { assets } from "../assets/assets";
-import type { FavoriteSongCard } from "./FavoritesSongs";
-import { type Song } from "../types/songType";
-import { response } from "./Display";
+import { assets } from "../../assets/assets";
+import type { FavoriteSongCard } from "../favorites/FavoritesSongs";
+import { type Song } from "../../types/songType";
+import { response } from "../layout/Display";
 
 type SongDetailContentProps = FavoriteSongCard & {
   songId: string;

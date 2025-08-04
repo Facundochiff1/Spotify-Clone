@@ -1,6 +1,6 @@
-import AlbumCard from "./AlbumCard";
-import ALbumCardContainer from "./AlbumCardContainer";
-import { response } from "./Display";
+import AlbumCard from "../album/AlbumCard";
+import ALbumCardContainer from "../album/AlbumCardContainer";
+import { response } from "../layout/Display";
 
 function CategoryDetailContentCard() {
   return (

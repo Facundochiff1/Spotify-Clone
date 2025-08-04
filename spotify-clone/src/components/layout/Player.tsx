@@ -1,6 +1,6 @@
-import { assets } from "../assets/assets";
-import PlayerSongCard from "./PlayerSongCard";
-import type { Song } from "../types/songType";
+import { assets } from "../../assets/assets";
+import PlayerSongCard from "../cards/PlayerSongCard";
+import type { Song } from "../../types/songType";
 
 type PlayerProps = {
   currentSong?: Song | null;

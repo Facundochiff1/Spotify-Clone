@@ -1,4 +1,4 @@
-import VideoPreview from './VideoPreview';
+import VideoPreview from '../video/VideoPreview';
 
 type VideoCardProps = {
     title: string;

@@ -1,10 +1,10 @@
 import DisplayHome from "./DisplayHome";
-import SongCard from "./SongCard";
-import SongCardContainer from "./SongCardContainer";
-import ButtonsDisplay from "./ButtonsDisplay";
-import AlbumCard from "./AlbumCard";
-import ALbumCardContainer from "./AlbumCardContainer";
-import type { Song } from "../types/songType";
+import SongCard from "../cards/SongCard";
+import SongCardContainer from "../cards/SongCardContainer";
+import ButtonsDisplay from "../buttons/ButtonsDisplay";
+import AlbumCard from "../album/AlbumCard";
+import ALbumCardContainer from "../album/AlbumCardContainer";
+import type { Song } from "../../types/songType";
 import { Link } from "react-router";
 
 type DisplayProps = {
@@ -303,7 +303,7 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
                   setIsPlaying={setIsPlaying}
                   setCurrentSong={setCurrentSong}
                 />
-              )              
+              )
               if (sidebarSong.id === 1) {
                 return (
                   <Link to={'/favorites'}>
@@ -321,12 +321,12 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
               return (
                 <Link key={createdFor.id} to={`/song/${createdFor.id}`}>
                   <AlbumCard
-                  key={createdFor.id}
-                  title={createdFor.description}
-                  artist={createdFor.description}
-                  src={createdFor.src}
-                  setCurrentSong={setCurrentSong}
-                  setIsPlaying={setIsPlaying}
+                    key={createdFor.id}
+                    title={createdFor.description}
+                    artist={createdFor.description}
+                    src={createdFor.src}
+                    setCurrentSong={setCurrentSong}
+                    setIsPlaying={setIsPlaying}
                   />
                 </Link>
 
@@ -338,12 +338,12 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
               return (
                 <Link key={heardAgain.id} to={`/song/${heardAgain.id}`}>
                   <AlbumCard
-                  key={heardAgain.id}
-                  title={heardAgain.description}
-                  artist={heardAgain.description}
-                  src={heardAgain.src}
-                  setCurrentSong={setCurrentSong}
-                  setIsPlaying={setIsPlaying}
+                    key={heardAgain.id}
+                    title={heardAgain.description}
+                    artist={heardAgain.description}
+                    src={heardAgain.src}
+                    setCurrentSong={setCurrentSong}
+                    setIsPlaying={setIsPlaying}
                   />
                 </Link>
               )

@@ -1,4 +1,4 @@
-import type { Song } from "../types/songType";
+import type { Song } from "../../types/songType";
 
 type SongListItemProps = {
   setCurrentSong: (song: Song) => void;

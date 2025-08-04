@@ -1,8 +1,8 @@
-import SideBar from "../components/Sidebar";
-import SongDetailSidebar from "../components/SongDetailSidebar";
-import Navbar from "../components/Navbar";
-import Player from "../components/Player";
-import SongDetailContent from "../components/SongDetailContent";
+import SideBar from "../components/layout/Sidebar";
+import SongDetailSidebar from "../components/song/SongDetailSidebar";
+import Navbar from "../components/layout/Navbar";
+import Player from "../components/layout/Player";
+import SongDetailContent from "../components/song/SongDetailContent";
 import type { Song } from "../types/songType";
 import { useState } from "react";
 import { useParams } from "react-router";
@@ -23,15 +23,15 @@ function SongDetail() {
 
     return (
         <div className="flex flex-col justify-center items-center bg-black w-screen h-screen">
-        <Navbar />
-        <div className="flex flex-1 overflow-y-hidden bg-black">
-            <div className="flex">
-                <SideBar />
-                <SongDetailContent togglePlayDetail={togglePlayDetail} isPlayingDetail={isPlayingDetail} setCurrentSong={setCurrentSong} songId={id!} />
-                <SongDetailSidebar titleAlbum="FFP Muse" titleSong="Survival" src="https://i.scdn.co/image/ab67616d0000b273fc192c54d1823a04ffb6c8c9" artist="Muse"/>
+            <Navbar />
+            <div className="flex flex-1 overflow-y-hidden bg-black">
+                <div className="flex">
+                    <SideBar />
+                    <SongDetailContent togglePlayDetail={togglePlayDetail} isPlayingDetail={isPlayingDetail} setCurrentSong={setCurrentSong} songId={id!} />
+                    <SongDetailSidebar titleAlbum="FFP Muse" titleSong="Survival" src="https://i.scdn.co/image/ab67616d0000b273fc192c54d1823a04ffb6c8c9" artist="Muse" />
+                </div>
             </div>
-        </div>
-        <Player currentSong={currentSong} isPlaying={isPlaying} togglePlay={togglePlay}  />
+            <Player currentSong={currentSong} isPlaying={isPlaying} togglePlay={togglePlay} />
         </div>
     );
 };

@@ -1,9 +1,9 @@
-import SideBar from "../components/Sidebar"
-import Player from "../components/Player"
-import SongDetailSidebar from "../components/SongDetailSidebar"
-import Navbar from "../components/Navbar"
+import SideBar from "../components/layout/Sidebar"
+import Player from "../components/layout/Player"
+import SongDetailSidebar from "../components/song/SongDetailSidebar"
+import Navbar from "../components/layout/Navbar"
 import { useParams } from "react-router"
-import CategorySongListContent from "../components/CategorySongListContent"
+import CategorySongListContent from "../components/category/CategorySongListContent"
 
 function CategoryDetail() {
     const { id } = useParams<{ id: string }>();

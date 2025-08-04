@@ -1,4 +1,4 @@
- import type { Song } from "../types/songType";
+ import type { Song } from "../../types/songType";
 
 type SongCardProps = {
   id: number;
