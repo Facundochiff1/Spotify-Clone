@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { assets } from "../../assets/assets";
 import ButtonsSidebar from "../buttons/ButtonsSidebar";
 import SidebarSongCard from "../cards/SidebarSongCard";
@@ -112,7 +113,7 @@ function SideBar() {
         <div className="flex items-center mt-0.5 gap-4">
           <button className="flex items-center justify-center border bg-[#2e2d2d86] border-[#2e2d2d86] cursor-pointer rounded-full h-[38px] px-4.5 gap-2">
             <img className="flex h-4" src={assets.plus_icon} />
-            <span className="font-bold">Create</span>
+            <Link to={'/create'} className="font-bold">Create</Link>
           </button>
           <img className="w-4.5 mr-2 cursor-pointer" src={assets.zoom_icon} />
         </div>

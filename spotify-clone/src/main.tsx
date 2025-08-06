@@ -8,19 +8,26 @@ import PageNotFound from './pages/PageNotFound.tsx'
 import Favorites from './pages/Favorites.tsx'
 import CategoryDetailContent from './pages/CategoryDetailContent.tsx'
 import CategoryDetail from './pages/CategoryDetail.tsx'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import CreateSong from './pages/CreateSong.tsx'
 
+export const queryClient = new QueryClient()
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <BrowserRouter>
-            <Routes>
-                <Route path='/' element={<App />}/>
-                <Route path='/song/:id' element={<SongDetail />}/>
-                <Route path='/category' element={<CategoryDetail />}/>
-                <Route path='/category/:id' element={<CategoryDetailContent />}/>
-                <Route path='favorites' element={<Favorites />}/>
-                <Route path='*' element={<PageNotFound />}/>
-            </Routes>
-        </BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<App />}/>
+                    <Route path='/song/:id' element={<SongDetail />}/>
+                    <Route path='/category' element={<CategoryDetail />}/>
+                    <Route path='/category/:id' element={<CategoryDetailContent />}/>
+                    <Route path='/favorites' element={<Favorites />}/>
+                    <Route path='/create' element={<CreateSong />}/>
+                    <Route path='*' element={<PageNotFound />}/>
+                </Routes>
+            </BrowserRouter>
+        </QueryClientProvider>
+
     </StrictMode>
 )

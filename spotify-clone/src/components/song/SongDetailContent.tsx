@@ -1,7 +1,7 @@
 import { assets } from "../../assets/assets";
 import type { FavoriteSongCard } from "../favorites/FavoritesSongs";
 import { type Song } from "../../types/songType";
-import { response } from "../layout/Display";
+import { musicDB } from "../../data/music";
 
 type SongDetailContentProps = FavoriteSongCard & {
   songId: string;
@@ -12,9 +12,9 @@ type SongDetailContentProps = FavoriteSongCard & {
 
 function SongDetailContent({ songId, isPlayingDetail, togglePlayDetail }: SongDetailContentProps) {
   const allSongs = [
-    ...response.forYou.createdForSection,
-    ...response.forYou.heardAgainSection,
-    ...response.forYou.favouriteArtistsSection
+    ...musicDB.forYou.createdForSection,
+    ...musicDB.forYou.heardAgainSection,
+    ...musicDB.forYou.favouriteArtistsSection
   ];
 
   const songsFound = allSongs.find((song) => song.id === parseInt(songId));
