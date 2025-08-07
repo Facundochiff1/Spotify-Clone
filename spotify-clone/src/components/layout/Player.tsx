@@ -24,7 +24,6 @@ function Player({ currentSong, isPlaying, togglePlay }: PlayerProps) {
           <img className='w-4 cursor-pointer' src={assets.prev_icon} alt="Prev song control" />
           <div className="flex items-center bg-white w-8 h-8 rounded-full justify-center">
             <button className="cursor-pointer ml-0.5" onClick={togglePlay}>
-              <audio src={assets.audio_trex}></audio>
               <img src={isPlaying ? assets.pause_icon : assets.play_icon} className="w-4 h-4" alt="Play/Pause control" />
             </button>
           </div>

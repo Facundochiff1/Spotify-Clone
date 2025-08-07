@@ -6,7 +6,6 @@ import Navbar from "./Navbar"
 import { useState } from "react"
 import type { Song } from "../../types/songType"
 
-
 function Home() {
     const [currentSong, setCurrentSong] = useState<Song | null>(null);
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
