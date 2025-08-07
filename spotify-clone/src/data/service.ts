@@ -97,13 +97,13 @@ export const musicService = {
   // POST - Create new song
   async createSong(songData: { 
     title: string;
-    cover?: string;
+    src?: string;
     artist?: string;
     album?: string;
-    year?: number;
+    year?: string;
     genre?: string[];
-    duration?: number;
-    rating?: number;
+    duration?: string;
+    listeners?: string;
     description?: string; }) {
     await delay(400);
     const stored = localStorage.getItem('musicDB');
@@ -112,8 +112,8 @@ export const musicService = {
     const newSong = {
       ...songData,
       id: getNextId(),
-      cover:
-        songData.cover ||
+      src:
+        songData.src ||
         'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=400',
     };
 

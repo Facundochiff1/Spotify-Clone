@@ -9,14 +9,15 @@ import { Link } from "react-router";
 import { musicService } from "../../data/service";
 import { useQuery } from "@tanstack/react-query";
 import { musicDB } from "../../data/music";
+import type { Key } from "react";
 
 type DisplayProps = {
   setCurrentSong?: (song: Song) => void;
   setIsPlaying?: (isPlaying: boolean) => void;
 }
-function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
 
-  const { isLoading, isError, error } = useQuery({
+function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
+  const { data: songs, isLoading, isError, error } = useQuery({
     queryKey: ['songs'],
     queryFn: musicService.getAllSongs
   })
@@ -35,7 +36,6 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
       </main>
     )
   }
-
   return (
     <main className="bg-[#121212] max-w-[1200px] w-[100%] m-2 mr-0 ml-0 px-8 rounded-[9px] text-white lg:w-[75%] overflow-y-auto">
       <DisplayHome />
@@ -43,7 +43,7 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
       <div className="flex flex-col ">
         <div>
           <SongCardContainer>
-            {musicDB.forYou.sidebarSongs.map((sidebarSong) => {
+            {musicDB.forYou.sidebarSongs.map((sidebarSong, index) => {
               const card = (
                 <SongCard
                   id={sidebarSong.id}
@@ -57,7 +57,7 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
               )
               if (sidebarSong.id === 1) {
                 return (
-                  <Link to={'/favorites'}>
+                  <Link key={index} to={'/favorites'}>
                     {card}
                   </Link>
                 )
@@ -120,6 +120,21 @@ function Display({ setCurrentSong, setIsPlaying }: DisplayProps) {
                     key={discoverNewMusic.id}
                     title={discoverNewMusic.title}
                     src={discoverNewMusic.src}
+                    setCurrentSong={setCurrentSong}
+                    setIsPlaying={setIsPlaying}
+                  />
+                </Link>
+              )
+            })}
+          </ALbumCardContainer>
+          <ALbumCardContainer title="Your created songs">
+            {songs.filter((song: { id: number; }) => song.id >= 21).map((song: Song, index: Key | null | undefined) => {
+              return (
+                <Link key={index} to={`/song/${song.id}`} >
+                  <AlbumCard
+                    key={index}
+                    title={song.title}
+                    src={song.src}
                     setCurrentSong={setCurrentSong}
                     setIsPlaying={setIsPlaying}
                   />

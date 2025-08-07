@@ -1,7 +1,8 @@
 import { assets } from "../../assets/assets";
 import type { FavoriteSongCard } from "../favorites/FavoritesSongs";
 import { type Song } from "../../types/songType";
-import { musicDB } from "../../data/music";
+import { useQuery } from "@tanstack/react-query";
+import { musicService } from "../../data/service";
 
 type SongDetailContentProps = FavoriteSongCard & {
   songId: string;
@@ -11,13 +12,36 @@ type SongDetailContentProps = FavoriteSongCard & {
 };
 
 function SongDetailContent({ songId, isPlayingDetail, togglePlayDetail }: SongDetailContentProps) {
-  const allSongs = [
-    ...musicDB.forYou.createdForSection,
-    ...musicDB.forYou.heardAgainSection,
-    ...musicDB.forYou.favouriteArtistsSection
-  ];
+  const { data: songs, isLoading, isError, error } = useQuery({
+    queryKey: ['songs'],
+    queryFn: musicService.getAllSongs
+  });
 
-  const songsFound = allSongs.find((song) => song.id === parseInt(songId));
+  if (isLoading) {
+    return (
+      <main className="flex w-full justify-center items-center h-full text-white">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-l-2 border-white"></div>
+      </main>
+    );
+  }
+
+  if (isError) {
+    return (
+      <main className="flex w-full justify-center items-center h-full text-white">
+        <div>Something went wrong... {error?.message}</div>
+      </main>
+    );
+  }
+
+  const songsFound = songs.find((song: { id: number; }) => song.id === parseInt(songId));
+
+  if (!songsFound) {
+    return (
+      <main className="flex w-full justify-center items-center h-full text-white">
+        <div>Song not found.</div>
+      </main>
+    );
+  }
 
   return (
     <div className="bg-[#121212c5] m-2 mr-0 ml-0 rounded-[9px] text-white lg:w-[75%] overflow-y-auto">
@@ -26,13 +50,14 @@ function SongDetailContent({ songId, isPlayingDetail, togglePlayDetail }: SongDe
           <div className="flex mb-32">
             <img
               className="h-[224px] w-[226px] ml-6 rounded"
-              src={songsFound?.src}
+              src={songsFound.src}
+              alt="Song cover"
             />
             <div className="flex flex-col items-start px-6 gap-6 mt-14">
               <span className="font-light">Song Information</span>
-              <h1 className="font-black text-7xl">{songsFound?.title}</h1>
+              <h1 className="font-black text-7xl">{songsFound.title}</h1>
               <div className="text-[14px] text-white">
-                <strong>{songsFound?.artist}</strong> • {songsFound?.title} • {songsFound?.year} • {songsFound?.duration} • {songsFound?.listeners}
+                <strong>{songsFound.artist}</strong> • {songsFound.title} • {songsFound.year} • {songsFound.duration} • {songsFound.listeners}
               </div>
             </div>
           </div>
@@ -50,7 +75,7 @@ function SongDetailContent({ songId, isPlayingDetail, togglePlayDetail }: SongDe
                   alt="Play/Pause control Detail song"
                 />
               </button>
-              <img className="h-7 w-7 cursor-pointer" src={assets.add_favorites_icon} alt="Shuffle mode" />
+              <img className="h-7 w-7 cursor-pointer" src={assets.add_favorites_icon} alt="Add to favorites" />
               <img className="h-6 w-6 cursor-pointer" src={assets.download_icon} alt="Download song" />
             </div>
           </section>
@@ -83,10 +108,10 @@ function SongDetailContent({ songId, isPlayingDetail, togglePlayDetail }: SongDe
             </p>
             <section className="flex mt-5 items-center hover:bg-[#504e4e44] w-[970px] rounded cursor-pointer p-2 px-2 font-bold">
               <div className="flex items-center justify-center gap-4">
-                <img className="rounded-full h-[78px] w-[78px]" src={songsFound?.src} alt="Artist info" />
+                <img className="rounded-full h-[78px] w-[78px]" src={songsFound.src} alt="Artist info" />
                 <div>
                   <p className="text-[14px]">Artista</p>
-                  <a href="#" className="text-[16px] hover:underline">{songsFound?.artist}</a>
+                  <a href="#" className="text-[16px] hover:underline">{songsFound.artist}</a>
                 </div>
               </div>
             </section>

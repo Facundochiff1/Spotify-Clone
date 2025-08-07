@@ -1,39 +1,17 @@
 import { Link } from "react-router";
 import { assets } from "../../assets/assets";
 import { useState, useRef } from "react";
+import { musicDB } from "../../data/music";
 
 function Navbar() {
   const [search, setSearch] = useState("");
   const input = useRef<HTMLInputElement>(null);
 
-  const songs = [
-    { id: 1, title: "I Wanna Be Yours ", artist: "Arctic Monkeys", src: "https://i.scdn.co/image/ab67616d0000b2730b4f0565f8a790f5105aeb1c" },
-    { id: 2, title: "En el séptimo día ", artist: "Soda Stereo" },
-    { id: 3, title: "Young Lust ", artist: "Pink Floyd" },
-    { id: 4, title: "Another Brick in the Wall ", artist: "Pink Floyd" },
-    { id: 5, title: "Bohemian Rhapsody ", artist: "Queen" },
-    { id: 6, title: "Smells Like Teen Spirit ", artist: "Nirvana" },
-    { id: 7, title: "Sweet Child O' Mine ", artist: "Guns N' Roses" },
-    { id: 8, title: "Back in Black ", artist: "AC/DC" },
-    { id: 9, title: "Paint It Black ", artist: "The Rolling Stones" },
-    { id: 10, title: "Come Together ", artist: "The Beatles" },
-    { id: 11, title: "Highway to Hell ", artist: "AC/DC" },
-    { id: 12, title: "Creep ", artist: "Radiohead" },
-    { id: 13, title: "In The End ", artist: "Linkin Park" },
-    { id: 14, title: "Californication ", artist: "Red Hot Chili Peppers" },
-    { id: 15, title: "Killing in the Name ", artist: "Rage Against the Machine" },
-    { id: 16, title: "Wish You Were Here ", artist: "Pink Floyd" },
-    { id: 17, title: "Hotel California ", artist: "Eagles" },
-    { id: 18, title: "The Pretender ", artist: "Foo Fighters" },
-    { id: 19, title: "Under the Bridge", artist: "Red Hot Chili Peppers" },
-    { id: 20, title: "La ciudad de la furia", artist: "Soda Stereo" }
-  ];
-
   const filterSong = (value: string) => {
     setSearch(value);
   }
 
-  const filteredSongs = songs.filter(song => song.title.toLowerCase().includes(search.toLowerCase()))
+  const filteredSongs = musicDB.forYou.navbarSongs.filter(song => song.title.toLowerCase().includes(search.toLowerCase()))
 
   return (
     <nav className="relative mt-1.5 top-0 left-0 w-full bg-[#000000] h-[60px] flex items-center px-4">
