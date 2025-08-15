@@ -1,6 +1,6 @@
-import AlbumCard from "./AlbumCard";
-import ALbumCardContainer from "./AlbumCardContainer";
-import { response } from "./Display";
+import AlbumCard from "../cards/AlbumCard";
+import ALbumCardContainer from "../album/AlbumCardContainer";
+import { musicDB } from "../../data/music";
 
 function CategoryDetailContentCard() {
   return (
@@ -22,7 +22,7 @@ function CategoryDetailContentCard() {
               <section className="flex flex-col justify-center items-start">
                 <div className="-mt-10">
                   <ALbumCardContainer>
-                    {response.forYou.createdForSection.map((createdFor) => {
+                    {musicDB.forYou.createdForSection.map((createdFor) => {
                       return (
                         <AlbumCard
                           key={createdFor.id}
@@ -36,7 +36,7 @@ function CategoryDetailContentCard() {
                 </div>
                 <div className="mt-10">
                   <ALbumCardContainer title="Editors Picks">
-                    {response.forYou.discoverNewMusic.map((newMusic) => {
+                    {musicDB.forYou.discoverNewMusic.map((newMusic) => {
                       return (
                         <AlbumCard
                           key={newMusic.id}

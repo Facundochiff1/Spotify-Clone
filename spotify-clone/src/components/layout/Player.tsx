@@ -1,6 +1,6 @@
-import { assets } from "../assets/assets";
-import PlayerSongCard from "./PlayerSongCard";
-import type { Song } from "../types/songType";
+import { assets } from "../../assets/assets";
+import PlayerSongCard from "../cards/PlayerSongCard";
+import type { Song } from "../../types/songType";
 
 type PlayerProps = {
   currentSong?: Song | null;
@@ -32,7 +32,7 @@ function Player({ currentSong, isPlaying, togglePlay }: PlayerProps) {
         </div>
         <div className='flex items-center gap-4 mt-1'>
           <p className="text-[14px]">0:15</p>
-          <input min={0} max={100} value={0} type="range" className="w-[500px] h-1 bg-gray-400 rounded-lg appearance-none" />
+          <input min={0} max={100} value={0} onChange={(e) => e.target.value} type="range" className="w-[500px] h-1 bg-gray-400 rounded-lg appearance-none" />
           <p className="text-[14px]">4:20</p>
         </div>
       </div>

@@ -1,8 +1,8 @@
-import SideBar from "../components/Sidebar"
-import Player from "../components/Player"
-import SongDetailSidebar from "../components/SongDetailSidebar"
-import Navbar from "../components/Navbar"
-import CategoryDetailContentCard from "../components/CategoryDetailContentCard"
+import SideBar from "../components/layout/Sidebar"
+import Player from "../components/layout/Player"
+import SongDetailSidebar from "../components/song/SongDetailSidebar"
+import Navbar from "../components/layout/Navbar"
+import CategoryDetailContentCard from "../components/category/CategoryDetailContentCard"
 
 function CategoryDetailContent() {
     return (

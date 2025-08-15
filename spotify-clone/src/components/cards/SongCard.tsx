@@ -1,4 +1,4 @@
- import type { Song } from "../types/songType";
+ import type { Song } from "../../types/songType";
 
 type SongCardProps = {
   id: number;
@@ -13,7 +13,7 @@ type SongCardProps = {
 function SongCard({ src, title, artist, album, setCurrentSong, setIsPlaying }: SongCardProps) {
 
   const handleClick = () => {
-    setCurrentSong?.({ title, src, artist, album: album ?? "" });
+    setCurrentSong?.({ title, src, artist, album: album ?? "", description: ""});
     setIsPlaying?.(true);
   }
 

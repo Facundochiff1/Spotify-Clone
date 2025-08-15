@@ -1,4 +1,4 @@
-import type { Song } from "../types/songType";
+import type { Song } from "../../types/songType";
 
 type AlbumCardProps = {
   description?: string;
@@ -9,7 +9,7 @@ type AlbumCardProps = {
   setIsPlaying?: (isPlaying: boolean) => void;
 }
 
-function AlbumCard({src, title }: AlbumCardProps) {
+function AlbumCard({ src, title }: AlbumCardProps) {
 
   return (
     <div className="group relative p-4 flex flex-col rounded-md hover:bg-white/10 transition duration-100">

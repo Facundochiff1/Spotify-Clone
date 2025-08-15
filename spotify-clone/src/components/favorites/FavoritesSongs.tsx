@@ -1,6 +1,6 @@
-import { assets } from "../assets/assets";
-import type { Song } from "../types/songType";
-import SongListItem from "./SongListItem";
+import { assets } from "../../assets/assets";
+import type { Song } from "../../types/songType";
+import SongListItem from "../song/SongListItem";
 
 export type FavoriteSongCard = {
   user?: string;
@@ -31,9 +31,9 @@ function FavoritesSongs({ user, numberSongs, setCurrentSong }: FavoriteSongCard)
             </div>
           </header>
           <main className="relative bg-[#0000001c] backdrop-blur-md p-4 w-full h-screen -mt-34 z-10 overflow-y-auto">
-              <section className="flex justify-between">
-                <div className="flex items-center p-2 gap-8 px-4">
-                  <button
+            <section className="flex justify-between">
+              <div className="flex items-center p-2 gap-8 px-4">
+                <button
                   className="bg-green-500 rounded-full w-12 h-12 text-2xl flex items-center justify-center hover:bg-green-400 cursor-pointer transition-opacity duration-100 text-black">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -43,31 +43,31 @@ function FavoritesSongs({ user, numberSongs, setCurrentSong }: FavoriteSongCard)
                     <path
                       fillRule="evenodd"
                       d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
-                      clipRule="evenodd"/>
+                      clipRule="evenodd" />
                   </svg>
-                  </button>
-                  <img className="h-6 w-6 cursor-pointer" src={assets.shuffle_icon} alt="Shuffle mode" />
-                  <img className="h-6 w-6 cursor-pointer" src={assets.download_icon} alt="Download song" />
+                </button>
+                <img className="h-6 w-6 cursor-pointer" src={assets.shuffle_icon} alt="Shuffle mode" />
+                <img className="h-6 w-6 cursor-pointer" src={assets.download_icon} alt="Download song" />
+              </div>
+              <div className="flex items-center gap-4 px-5">
+                <img className="h-4 w-4 cursor-pointer" src={assets.search_icon} alt="Search song list" />
+                <p className="text-gray-400 cursor-pointer">Date added</p>
+                <img className="h-5 w-5 cursor-pointer" src={assets.list_icon} alt="Song list" />
+              </div>
+            </section>
+            <section className="ml-4 mr-4">
+              <div className="flex text-left text-[14px] mt-5 text-gray-400 border-b border-gray-700 pb-2">
+                <p className="w-1/2 ml-5"># Title</p>
+                <p className="w-1/2 ml-[100px]">Album</p>
+                <p className="w-3/9 ">Date added</p>
+                <div className=" flex justify-end">
+                  <img className="w-4 h-4 mr-5" src={assets.clock_icon} alt="Duration" />
                 </div>
-                <div className="flex items-center gap-4 px-5">
-                  <img className="h-4 w-4 cursor-pointer" src={assets.search_icon} alt="Search song list" />
-                  <p className="text-gray-400 cursor-pointer">Date added</p>
-                  <img className="h-5 w-5 cursor-pointer" src={assets.list_icon} alt="Song list" />
-                </div>
-              </section>
-              <section className="ml-4 mr-4">
-                <div className="flex text-left text-[14px] mt-5 text-gray-400 border-b border-gray-700 pb-2">
-                  <p className="w-1/2 ml-5"># Title</p>
-                  <p className="w-1/2 ml-[100px]">Album</p>
-                  <p className="w-3/9 ">Date added</p>
-                  <div className=" flex justify-end">
-                    <img className="w-4 h-4 mr-5" src={assets.clock_icon} alt="Duration" />
-                  </div>
-                </div>
-                <div className="mt-6">
-                  <SongListItem setCurrentSong={setCurrentSong}/>
-                </div>
-              </section>
+              </div>
+              <div className="mt-6">
+                <SongListItem setCurrentSong={setCurrentSong} />
+              </div>
+            </section>
           </main>
         </div>
       </div>

@@ -1,11 +1,10 @@
 import SideBar from "./Sidebar"
 import Player from "./Player"
 import Display from "./Display"
-import SongDetailSidebar from "./SongDetailSidebar"
+import SongDetailSidebar from "../song/SongDetailSidebar"
 import Navbar from "./Navbar"
 import { useState } from "react"
-import type { Song } from "../types/songType"
-
+import type { Song } from "../../types/songType"
 
 function Home() {
     const [currentSong, setCurrentSong] = useState<Song | null>(null);
